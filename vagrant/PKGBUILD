@@ -1,0 +1,13 @@
+# Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
+pkgname=vagrant
+pkgver=2.3.4
+pkgrel=1
+pkgdesc='A command line utility for managing the lifecycle of virtual machines.'
+arch=('x86_64')
+url='https://www.vagrantup.com/'
+source=("${pkgname}-${pkgver}.${arch}.rpm::https://releases.hashicorp.com/vagrant/2.3.4/vagrant-2.3.4-1.x86_64.rpm")
+sha256sums=('SKIP')
+
+package() {
+    find $srcdir/ -mindepth 1 -maxdepth 1 -type d | xargs cp -r -t "$pkgdir"
+}
