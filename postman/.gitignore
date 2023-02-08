@@ -1,0 +1,5 @@
+*
+!.gitignore
+!postman.desktop
+!PKGBUILD
+!README.md
