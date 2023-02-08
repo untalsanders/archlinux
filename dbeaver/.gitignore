@@ -1,5 +1,5 @@
 *
 !.gitignore
-!dbeaver-ce.desktop
+!*.desktop
 !PKGBUILD
 !README.md
