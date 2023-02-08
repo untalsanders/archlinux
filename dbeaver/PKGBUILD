@@ -1,0 +1,30 @@
+# Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
+pkgname=dbeaver-ce
+pkgver=22.3.4
+pkgrel=1
+pkgdesc='Universal Database Manager.'
+provides=('dbeaver-ce')
+conflicts=('dbeaver-ce')
+arch=('x86_64')
+url='https://dbeaver.io/'
+source=(
+    "${pkgname}-${pkgver}.${arch}.tar.gz::https://github.com/dbeaver/dbeaver/releases/download/${pkgver}/${pkgname}-${pkgver}-linux.gtk.${arch}.tar.gz"
+    "${pkgname}.desktop"
+)
+sha256sums=(
+    "c1a325c43007675e9de795689218458c070a84ad251bbeb08e393b4bfa4312ea" 
+    "94922a21ae1efffdd2748a355547127cd198cb2443ef0aa2723563e25b5bcc5c"
+)
+
+package() {
+    # Install package
+    install -dm755 "${pkgdir}/opt/"
+    find ${srcdir}/ -mindepth 1 -maxdepth 1 -type d | xargs cp -r -t "${pkgdir}/opt/"
+    install -dm755 "${pkgdir}/usr/bin/"
+    ln -s "/opt/dbeaver/dbeaver" "${pkgdir}/usr/bin/dbeaver"
+    # Icon
+    install -dm755 "${pkgdir}/usr/share/icons/"
+    ln -s "/opt/dbeaver/dbeaver.png" "${pkgdir}/usr/share/icons/dbeaver.png"
+    # Desktop file
+    install -D -m644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+}
