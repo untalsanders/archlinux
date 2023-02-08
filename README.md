@@ -4,8 +4,9 @@ This is a package compendium for Archlinux.
 
 ## Packages
 
- - [Vagrant](vagrant)
  - [DBeaver Community](dbeaver)
+ - [Postman](postman)
+ - [Vagrant](vagrant)
 
 ## LICENSE
 
