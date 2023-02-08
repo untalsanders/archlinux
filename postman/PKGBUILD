@@ -1,0 +1,28 @@
+# Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
+pkgname=postman
+pkgver=10.9.3
+pkgrel=1
+pkgdesc="Build, test, and document your APIs faster"
+arch=('x86_64')
+url="https://www.getpostman.com"
+options=(!strip)
+license=('custom')
+source=(
+    "Postman-linux-x64-${pkgver}.tar.gz::https://dl.pstmn.io/download/version/${pkgver}/linux64"
+    "postman.desktop"
+)
+depends=(libxss nss gtk3)
+sha256sums=('b6ad28c9f5c1eac08b83b9831772bec5d1eec4b58e83f38daaf8cf53c405be18'
+            '25fde67155c7798537cc5a49b53fbbf78efec53758168906a8f382c9949d516d')
+package() {
+    # Install package
+    install -dm755 "${pkgdir}/opt/"
+    find ${srcdir}/ -mindepth 1 -maxdepth 1 -type d | xargs cp -r -t "${pkgdir}/opt/"
+    install -dm755 "${pkgdir}/usr/bin"
+    ln -s "/opt/Postman/Postman" "${pkgdir}/usr/bin/postman"
+    # # Desktop file
+    install -D -m644 "postman.desktop" "${pkgdir}/usr/share/applications/postman.desktop"
+    # # Icon
+    install -d -m755 "${pkgdir}/usr/share/icons/hicolor/128x128/apps"
+    ln -s "/opt/Postman/app/resources/app/assets/icon.png" "${pkgdir}/usr/share/icons/hicolor/128x128/apps/postman.png"
+}
