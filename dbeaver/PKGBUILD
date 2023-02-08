@@ -7,7 +7,6 @@ provides=('dbeaver-ce')
 conflicts=('dbeaver-ce')
 arch=('x86_64')
 url='https://dbeaver.io/'
-makedepends=('gendesk')
 source=(
     "${pkgname}-${pkgver}.${arch}.tar.gz::https://github.com/dbeaver/dbeaver/releases/download/${pkgver}/${pkgname}-${pkgver}-linux.gtk.${arch}.tar.gz"
     "${pkgname}.desktop"
