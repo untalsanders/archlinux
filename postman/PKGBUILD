@@ -1,6 +1,6 @@
 # Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
 pkgname=postman
-pkgver=10.9.3
+pkgver=10.13.4
 pkgrel=1
 pkgdesc="Build, test, and document your APIs faster"
 arch=('x86_64')
@@ -8,11 +8,11 @@ url="https://www.getpostman.com"
 options=(!strip)
 license=('custom')
 source=(
-    "Postman-linux-x64-${pkgver}.tar.gz::https://dl.pstmn.io/download/version/${pkgver}/linux64"
+    "Postman-linux-x64-${pkgver}.tar.gz::https://dl.pstmn.io/download/latest/linux64"
     "postman.desktop"
 )
 depends=(libxss nss gtk3)
-sha256sums=('b6ad28c9f5c1eac08b83b9831772bec5d1eec4b58e83f38daaf8cf53c405be18'
+sha256sums=('cdc52d25d6b1c5529d483a15b224c76aa94224ac3193965d7cfe3aa355a1ee61'
             '25fde67155c7798537cc5a49b53fbbf78efec53758168906a8f382c9949d516d')
 package() {
     # Install package
