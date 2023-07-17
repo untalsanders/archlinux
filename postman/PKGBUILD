@@ -1,6 +1,6 @@
 # Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
 pkgname=postman
-pkgver=10.14
+pkgver=10.16
 pkgrel=1
 pkgdesc="Build, test, and document your APIs faster"
 arch=('x86_64')
@@ -12,7 +12,7 @@ source=(
     "postman.desktop"
 )
 depends=(libxss nss gtk3)
-sha256sums=('0e5e1c2d542bf941b90d9a065a58bd2ac9e86d9c9beacd53c74d5743f4b1c836'
+sha256sums=('055dff2b282b8f494743dd07896c04b7e76a2f88e87e8f8a4b80192ba70bb47d'
             '25fde67155c7798537cc5a49b53fbbf78efec53758168906a8f382c9949d516d')
 package() {
     # Install package
