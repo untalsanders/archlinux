@@ -1,6 +1,6 @@
 # Maintainer: Sanders Gutiérrez <ing.sanders@gmail.com>
 pkgname=dbeaver-ce
-pkgver=22.3.4
+pkgver=23.1.2
 pkgrel=1
 pkgdesc='Universal Database Manager.'
 provides=('dbeaver-ce')
@@ -12,7 +12,7 @@ source=(
     "${pkgname}.desktop"
 )
 sha256sums=(
-    "c1a325c43007675e9de795689218458c070a84ad251bbeb08e393b4bfa4312ea" 
+    "2edb76943003964ff83dbfd35b1a75238e262ee55a034271011d9cd5f269d1ae" 
     "94922a21ae1efffdd2748a355547127cd198cb2443ef0aa2723563e25b5bcc5c"
 )
 
